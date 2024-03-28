@@ -1,9 +1,15 @@
 import express, { Express, Request, Response } from 'express';
 import http, { Server as HTTPServer } from 'http';
 import { Server as SocketIOServer, Socket } from 'socket.io';
+import 'dotenv/config'
 
 import routesUser from '../routes/login.routes'
+import routesCalls from '../routes/calls.routes'
+
 import { User } from '../models/user';
+import { Call } from './calls';
+import { Contacts } from './contacts';
+import { Participats } from './participants';
 
 class Server {
     private app: Express;
@@ -37,7 +43,12 @@ class Server {
     // manejo de la bd
     private async setupDataBaseConnection(){
         try {
+            
             await User.sync();
+            await Call.sync();
+            await Contacts.sync();
+            await Participats.sync();
+
         } catch (error) {
             console.error("Imposible conectarse a la base de datos: ", error);
         }
@@ -50,10 +61,7 @@ class Server {
 
     // config de rutas
     private setupRoutes(): void {
-        this.app.get('/', (req: Request, res: Response) => {
-            res.send('¡Hola mundo!');
-        });
-
+        this.app.use('/api/calls', routesCalls);
         this.app.use('/api/users', routesUser);
     }
 

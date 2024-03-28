@@ -15,8 +15,13 @@ Object.defineProperty(exports, "__esModule", { value: true });
 const express_1 = __importDefault(require("express"));
 const http_1 = __importDefault(require("http"));
 const socket_io_1 = require("socket.io");
+require("dotenv/config");
 const login_routes_1 = __importDefault(require("../routes/login.routes"));
+const calls_routes_1 = __importDefault(require("../routes/calls.routes"));
 const user_1 = require("../models/user");
+const calls_1 = require("./calls");
+const contacts_1 = require("./contacts");
+const participants_1 = require("./participants");
 class Server {
     constructor() {
         var _a;
@@ -43,6 +48,9 @@ class Server {
         return __awaiter(this, void 0, void 0, function* () {
             try {
                 yield user_1.User.sync();
+                yield calls_1.Call.sync();
+                yield contacts_1.Contacts.sync();
+                yield participants_1.Participats.sync();
             }
             catch (error) {
                 console.error("Imposible conectarse a la base de datos: ", error);
@@ -55,9 +63,7 @@ class Server {
     }
     // config de rutas
     setupRoutes() {
-        this.app.get('/', (req, res) => {
-            res.send('¡Hola mundo!');
-        });
+        this.app.use('/api/calls', calls_routes_1.default);
         this.app.use('/api/users', login_routes_1.default);
     }
     // inicio del backend
