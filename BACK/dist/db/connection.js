@@ -1,7 +1,8 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
 const sequelize_1 = require("sequelize");
-const sequelize = new sequelize_1.Sequelize('nombrebd', 'usuario', 'contraseña', {
+// Conexion con la base de datos mysql con sequelize
+const sequelize = new sequelize_1.Sequelize('tfgrework', 'root', 'cesar', {
     host: 'localhost',
     dialect: 'mysql'
 });

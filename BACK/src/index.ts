@@ -4,4 +4,4 @@ import Server from "./models/server"
 const server = new Server();
 server.start();
 
-// TODO min 39:13
+// TODO https://www.youtube.com/watch?v=XXMczd98pTY&t=335s&ab_channel=TomasRuizDiaz

@@ -3,6 +3,7 @@ import http, { Server as HTTPServer } from 'http';
 import { Server as SocketIOServer, Socket } from 'socket.io';
 
 import routesUser from '../routes/login.routes'
+import { User } from '../models/user';
 
 class Server {
     private app: Express;
@@ -15,6 +16,7 @@ class Server {
         this.port = process.env.PORT ?? "3000";
         this.server = http.createServer(this.app);
 
+        this.setupDataBaseConnection();
         this.setupSocket();
         this.setupMidlewares();
         this.setupRoutes();
@@ -32,10 +34,21 @@ class Server {
         });
     }
 
+    // manejo de la bd
+    private async setupDataBaseConnection(){
+        try {
+            await User.sync();
+        } catch (error) {
+            console.error("Imposible conectarse a la base de datos: ", error);
+        }
+    }
+
+    // midlewares para la api
     private setupMidlewares(): void{
         this.app.use(express.json());
     }
 
+    // config de rutas
     private setupRoutes(): void {
         this.app.get('/', (req: Request, res: Response) => {
             res.send('¡Hola mundo!');
@@ -44,6 +57,7 @@ class Server {
         this.app.use('/api/users', routesUser);
     }
 
+    // inicio del backend
     public start(): void {
         this.server.listen(this.port, () => {
             console.log(`Servidor escuchando en el puerto ${this.port}`);
