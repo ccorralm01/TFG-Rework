@@ -6,21 +6,30 @@ Object.defineProperty(exports, "__esModule", { value: true });
 exports.Contacts = void 0;
 const sequelize_1 = require("sequelize");
 const connection_1 = __importDefault(require("../db/connection"));
-// Creación de la tabla calls con sequelize
+const user_1 = require("./user");
+// Creación de la tabla contacts con sequelize
 exports.Contacts = connection_1.default.define('contact', {
     user_id: {
         type: sequelize_1.DataTypes.INTEGER,
         primaryKey: true,
-        allowNull: false
+        allowNull: false,
+        references: {
+            model: user_1.User,
+            key: 'id'
+        }
     },
     addcontact_id: {
         type: sequelize_1.DataTypes.INTEGER,
         primaryKey: true,
-        allowNull: false
+        allowNull: false,
+        references: {
+            model: user_1.User,
+            key: 'id'
+        }
     },
-    acepted: {
+    accepted: {
         type: sequelize_1.DataTypes.BOOLEAN,
-        defaultValue: "0",
+        defaultValue: false,
         allowNull: true
     }
 });

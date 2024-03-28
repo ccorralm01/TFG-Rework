@@ -1,21 +1,30 @@
 import { DataTypes } from "sequelize";
 import sequelize from "../db/connection";
+import { User } from "./user";
 
-// Creación de la tabla calls con sequelize
+// Creación de la tabla contacts con sequelize
 export const Contacts = sequelize.define('contact', {
     user_id: {
         type: DataTypes.INTEGER,
         primaryKey: true,
-        allowNull: false
+        allowNull: false,
+        references: {
+            model: User, 
+            key: 'id'   
+        }
     },
     addcontact_id: {
         type: DataTypes.INTEGER,
         primaryKey: true,
-        allowNull: false
+        allowNull: false,
+        references: {
+            model: User, 
+            key: 'id'    
+        }
     },
-    acepted: {
+    accepted: {
         type: DataTypes.BOOLEAN,
-        defaultValue: "0",
+        defaultValue: false,
         allowNull: true
     }
-})
+});
