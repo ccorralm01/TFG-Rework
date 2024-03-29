@@ -14,16 +14,16 @@ describe('AppComponent', () => {
     expect(app).toBeTruthy();
   });
 
-  it(`should have the 'TFG-Rework' title`, () => {
+  it(`should have the 'FRONT' title`, () => {
     const fixture = TestBed.createComponent(AppComponent);
     const app = fixture.componentInstance;
-    expect(app.title).toEqual('TFG-Rework');
+    expect(app.title).toEqual('FRONT');
   });
 
   it('should render title', () => {
     const fixture = TestBed.createComponent(AppComponent);
     fixture.detectChanges();
     const compiled = fixture.nativeElement as HTMLElement;
-    expect(compiled.querySelector('h1')?.textContent).toContain('Hello, TFG-Rework');
+    expect(compiled.querySelector('h1')?.textContent).toContain('Hello, FRONT');
   });
 });
