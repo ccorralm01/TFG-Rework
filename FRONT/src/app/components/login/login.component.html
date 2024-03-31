@@ -1,44 +1,21 @@
-<div class="login-component">
-  <div class="login-container col-lg-4">
-      <section class="background-radial-gradient overflow-hidden">
-          <div class="container px-4 py-5 px-md-5 text-center text-lg-start my-5">
-              <div class="gx-lg-5 col-lg-12 align-items-center">
-                  <div class="col-lg-12 position-relative"> <!-- Cambio de col-lg-6 a col-lg-8 -->
-                      <div id="radius-shape-1" class="position-absolute rounded-circle shadow-5-strong"></div>
-                      <div id="radius-shape-2" class="position-absolute shadow-5-strong"></div>
-  
-                      <div class="card bg-glass">
-                          <div class="card-body px-5 py-5 px-md-5">
-                              <form>
-                                  <!-- Email input -->
-                                  <div class="form-outline mb-4">
-                                      <input type="email" id="form3Example3" class="form-control" />
-                                      <label class="form-label" for="form3Example3">Correo electrónico</label>
-                                  </div>
-  
-                                  <!-- Password input -->
-                                  <div class="form-outline mb-4">
-                                      <input type="password" id="form3Example4" class="form-control" />
-                                      <label class="form-label" for="form3Example4">Contraseña</label>
-                                  </div>
-  
-                                  <!-- Submit button -->
-                                  <div class="w-100 d-flex justify-content-center">
-                                      <button type="submit" class="btn btn-primary btn-block mb-4">
-                                          Iniciar sesión
-                                      </button>
-                                  </div>
-  
-                                  <!-- Register buttons -->
-                                  <div class="text-center">
-                                      <p>¿No tienes cuenta? Regístrate <a href="">aquí</a></p>
-                                  </div>
-                              </form>
-                          </div>
-                      </div>
-                  </div>
-              </div>
-          </div>
-      </section>
-  </div>
+<div class="login-component d-flex align-items-center justify-content-center">
+    <div class="login col-lg-3 col-md-6 col-sm-9 col-xs-12 d-flex justify-content-center py-5">
+        <div class="logoContainer">
+            <img class="logo" src="../../../assets/img/KrakenViewLogo.png" alt="">
+        </div>
+        <form class="d-flex col-lg-8 col-sm-8 col-11 flex-column justify-content-between pt-3">
+            <span class="logoName col-12 mb-2">Kraken View</span>
+            <span class="registerText col-12 mb-3">Inicio de Sesión</span>
+            <div class="mb-3">
+                <input type="email" class="form-control" id="exampleInputEmail1" placeholder="Correo electrónico" aria-describedby="emailHelp">
+            </div>
+            <div class="mb-3">
+                <input type="password" class="form-control" placeholder="Contraseña" id="exampleInputPassword1">
+            </div>
+            <div class="row d-flex align-items-stretch justify-content-around mt-5">
+                <button type="button" class="IniciarSesionBtn col-lg-5 col-sm-8 col-11 btn d-flex align-items-center justify-content-center"><a routerLink="/dashboard">Iniciar Sesion</a></button>
+                <button type="button" class="registrarseBtn mt-lg-0 mt-3 col-lg-5 col-sm-8 col-11 btn d-flex align-items-center justify-content-center"><a routerLink="/signin">Registrarse</a></button>
+            </div>
+        </form>
+    </div>
 </div>

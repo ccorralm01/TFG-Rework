@@ -1,22 +1,80 @@
 .login-component {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    background-color: rebeccapurple;
+    background-color: #040A20;
     height: 100%;
-    width: 100%;
-    mix-blend-mode: difference;
-    background-image: radial-gradient(circle at 30% 94%, rgba(245, 245, 245,0.06) 0%, rgba(245, 245, 245,0.06) 50%,rgba(21, 21, 21,0.06) 50%, rgba(21, 21, 21,0.06) 100%),radial-gradient(circle at 59% 19%, rgba(248, 248, 248,0.06) 0%, rgba(248, 248, 248,0.06) 50%,rgba(87, 87, 87,0.06) 50%, rgba(87, 87, 87,0.06) 100%),radial-gradient(circle at 7% 11%, rgba(148, 148, 148,0.06) 0%, rgba(148, 148, 148,0.06) 50%,rgba(254, 254, 254,0.06) 50%, rgba(254, 254, 254,0.06) 100%),linear-gradient(90deg, rgb(189, 189, 189),rgb(205, 205, 205));
+    font-family: 'Gilroy';
 }
 
-.background-radial-gradient {
-    background-color: transparent;
-    background-image: radial-gradient(circle at center center, rgb(71, 71, 71),rgb(8, 8, 8));
-    mix-blend-mode: difference;
+.login{
+    background-color: #161D34;
+    /* background-color: #186EFC; */
+    /* background-color: #4285f4;  186EFC*/
+    position: relative;
+    height: auto;
+    border-radius: 15px;
 }
 
-.bg-glass {
-    background-color: hsla(0, 0%, 100%, 0.9) !important;
-    backdrop-filter: saturate(200%) blur(25px) normal; 
-    mix-blend-mode: difference;
+.logoName, .registerText{
+    color: #FFF;
+    font-weight: bold;
+    text-align: center;
+}
+
+.registerText{
+    font-size: 1.2em;
+    color: #4285f4;
+}
+
+.logoName{
+    font-size: 2em;
+}
+
+.logoContainer{
+    background-color: rebeccapurple;
+    width: 120px;
+    height: 120px; 
+    border-radius: 50%; 
+    overflow: hidden;
+    top: -60px;
+    position: absolute;
+}
+
+.logoContainer img{
+    width: 100%; 
+    height: auto;
+}
+
+.login-component input{
+    background-color: #FFF;
+    border: 0;
+    color: #040A20;
+    font-weight: bold;
+    letter-spacing: 1px;
+}
+
+.login-component input::placeholder {
+    color: #040A20;
+    opacity: 1;
+}
+
+.IniciarSesionBtn, .registrarseBtn {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #FFF;
+    font-weight: bold;
+    letter-spacing: 1px;
+    text-align: center;
+}
+
+.IniciarSesionBtn{
+    background-color: #4285f4;
+}
+
+.registrarseBtn{
+    background-color: #C42695;
+}
+
+.registrarseBtn a, .IniciarSesionBtn a{
+    text-decoration: none;
+    color: #FFF;
 }

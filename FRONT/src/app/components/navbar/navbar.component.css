@@ -1,0 +1,51 @@
+.navbar{
+    background-color: #040A20;
+    color: #FFF;
+    font-family: 'Gilroy';
+    font-weight: bold;
+    height: auto;
+}
+
+.logoContainer, .profileContainer{
+    background-color: rebeccapurple;
+    width: 60px;
+    height: 60px; 
+    border-radius: 50%; 
+    overflow: hidden; 
+}
+
+.logoContainer img, .profileContainer img{
+    width: 100%;
+    height: 100%;
+}
+
+.LogoName{
+    font-size: 2em;
+}
+
+.profileContainer{
+    width: 50px;
+    height: 50px;
+}
+
+.options{
+    margin-right: 0;
+}
+
+a > span{
+    color: #FFF;
+    font-family: 'Gilroy';
+    font-weight: bold;
+    text-align: center;
+}
+
+.navbar-toggler{
+    border: 0;
+}
+
+.navbar-toggler:focus,
+.navbar-toggler:active,
+.navbar-toggler-icon:focus {
+    outline: none;
+    box-shadow: none;
+}

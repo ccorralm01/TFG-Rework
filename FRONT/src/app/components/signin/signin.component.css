@@ -1,0 +1,80 @@
+.login-component {
+    background-color: #040A20;
+    height: 100%;
+    font-family: 'Gilroy';
+}
+
+.login{
+    background-color: #161D34;
+    /* background-color: #186EFC; */
+    /* background-color: #4285f4;  186EFC*/
+    position: relative;
+    height: auto;
+    border-radius: 15px;
+}
+
+.logoName, .registerText{
+    color: #FFF;
+    font-weight: bold;
+    text-align: center;
+}
+
+.registerText{
+    font-size: 1.2em;
+    color: #C42695;
+}
+
+.logoName{
+    font-size: 2em;
+}
+
+.logoContainer{
+    background-color: rebeccapurple;
+    width: 120px;
+    height: 120px; 
+    border-radius: 50%; 
+    overflow: hidden;
+    top: -60px;
+    position: absolute;
+}
+
+.logoContainer img{
+    width: 100%; 
+    height: auto;
+}
+
+.login-component input{
+    background-color: #FFF;
+    border: 0;
+    color: #040A20;
+    font-weight: bold;
+    letter-spacing: 1px;
+}
+
+.login-component input::placeholder {
+    color: #040A20;
+    opacity: 1;
+}
+
+.IniciarSesionBtn, .registrarseBtn {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #FFF;
+    font-weight: bold;
+    letter-spacing: 1px;
+    text-align: center;
+}
+
+.IniciarSesionBtn{
+    background-color: #4285f4;
+}
+
+.IniciarSesionBtn a{
+    text-decoration: none;
+    color: #FFF;
+}
+
+.registrarseBtn{
+    background-color: #C42695;
+}
