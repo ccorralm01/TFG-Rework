@@ -103,3 +103,14 @@
     background-clip: content-box;
     background-color: #C42695;
 }
+
+.chat{
+    background-color: #161D34;
+    border-radius: 15px;
+    height: 90%;
+    font-size: 1.2em;
+}
+
+.userMensaje{
+    text-align: end;
+}
