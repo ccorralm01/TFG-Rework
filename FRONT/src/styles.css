@@ -1,8 +1,22 @@
-/* You can add global styles to this file, and also import other style files */
-html, body{
+/* Restablecer márgenes y rellenos */
+html, body, app-root {
+    margin: 0;
+    padding: 0;
     height: 100%;
 }
 
+/* Ajustar box-sizing */
+* {
+    box-sizing: border-box;
+}
+
+/* Estilos para app-root */
+app-root {
+    display: block;
+    height: 100%;
+}
+
+/* Resto de tus estilos */
 @font-face {
     font-family: "Gilroy";
     font-weight: bold;

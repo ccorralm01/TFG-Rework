@@ -1,36 +1,45 @@
-.dashboard-component {
+.dashboard-component{
     display: flex;
     justify-content: center;
-    align-items: flex-start; /* Ajusta la alineación vertical según sea necesario */
+    align-items: flex-start;
     background-color: #040A20;
     color: #FFF;
     font-family: 'Gilroy';
     font-weight: bold;
+    overflow: auto;
+    margin: 0;
+    padding: 0;
 }
 
-.callContainer,
-.chatContainer {
-    height: 800px;
-    max-height: 800px;
-}
+.grid-template {
+    display: grid;
+    grid-template-columns: 2fr 1fr;
+    grid-template-rows: auto 1fr;
+    grid-column-gap: 20px;
+    grid-row-gap: 20px;
+    height: 100%;
+    }
+    
+.callContainer { grid-area: 1 / 1 / 2 / 2; }
+.participantsContainer { grid-area: 2 / 1 / 3 / 2; }
+.chatContainer { grid-area: 1 / 2 / 3 / 3; }
 
-.callContainer .callBody,
-.chatContainer .participantsContainer {
-    flex: 1;
-}
-
-.callBody{
+.callContainer, .participantsContainer, .chatContainer{
     background: rgba(22, 29, 52, 0.69);
     border-radius: 16px;
     box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
     backdrop-filter: blur(8.7px);
     -webkit-backdrop-filter: blur(8.7px);
-    border-radius: 15px;
     height: 100%;
 }
 
 .callTitle{
     font-size: 2em;
+}
+
+.bluebtn{
+    background-color: #4285f4;
+    color: #FFF;
 }
 
 .profilePic{
@@ -45,63 +54,52 @@
     height: 100%;
 }
 
-.callBodyLine2{
-    background-color: black;
-    height: 512px;
-    border-radius: 15px;
+.addParticipants{
+    background-color: #C42695;
+    color: #FFF;
 }
 
 .Rol{
     opacity: 75%;
 }
 
-.addParticipants{
-    background-color: #C42695;
-    color: #FFF;
-}
-
-.bluebtn{
-    background-color: #4285f4;
-    color: #FFF;
-}
-
-.chatContainer{
-    background: rgba(22, 29, 52, 0.69);
-    border-radius: 16px;
-    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
-    backdrop-filter: blur(8.7px);
-    -webkit-backdrop-filter: blur(8.7px);
+.mainCameraDisplay{
+    background-color: black;
+    border-radius: 15px;
+    height: 400px;
 }
 
 .participantsContainer{
-    max-height: 580px;
-    overflow-y: auto;
+    overflow-x: hidden;
 }
 
-.participants {
+.participantsList{
+    overflow: auto;
+}
+
+.participantsList ul{
     list-style: none;
 }
 
-.participantCam {
-    height: 220px;
+.participantCamDisplay{
     background-color: black;
-    margin-bottom: 20px;
+    height: 150px;
+    width: 200px;
 }
 
-.participantsContainer::-webkit-scrollbar {
+.participantsList::-webkit-scrollbar {
     width: 16px;
 }
 
-.participantsContainer::-webkit-scrollbar-track {
+.participantsList::-webkit-scrollbar-track {
     border-radius: 8px;
     background-color: #fff;
     border: 1px solid #fff;
 }
 
-.participantsContainer::-webkit-scrollbar-thumb {
+.participantsList::-webkit-scrollbar-thumb {
     border-radius: 8px;
     border: 3px solid transparent;
     background-clip: content-box;
     background-color: #C42695;
 }
-
