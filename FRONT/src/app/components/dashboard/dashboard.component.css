@@ -11,23 +11,15 @@
     padding: 0;
     flex: 1;
 }
-
-.grid-template {
-    display: grid;
-    grid-template-columns: 3fr 1fr;
-    grid-template-rows: 1fr;
-    grid-column-gap: 15px;
-    grid-row-gap: 15px;
-    height: 100%;
-}
     
 .callContainer { 
-        grid-area: 1 / 1 / 2 / 2; 
         display: flex;
         flex-direction: column;
         overflow: hidden;
 }
-.chatContainer { grid-area: 1 / 2 / 2 / 3; }
+.chatContainer {
+    display: none;
+}
 
 .callContainer, .chatContainer{
     background: rgba(22, 29, 52, 0.69);

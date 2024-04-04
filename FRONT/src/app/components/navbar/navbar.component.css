@@ -1,5 +1,6 @@
 .navbar{
-    background-color: #040A20;
+    background: rgb(22,29,52);
+    background: linear-gradient(0deg, rgba(22,29,52,1) 0%, rgba(4,10,32,1) 50%, rgba(22,29,52,1) 100%);
     color: #FFF;
     font-family: 'Gilroy';
     font-weight: bold;
