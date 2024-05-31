@@ -30,8 +30,6 @@
     height: 100%;
 }
 
-
-
 .callTitle{
     font-size: 2em;
 }
@@ -39,6 +37,11 @@
 .bluebtn{
     background-color: #4285f4;
     color: #FFF;
+}
+
+.call-tools{
+    background-color: #161D34;
+    border-radius: 16px 16px 0 0;
 }
 
 .profilePic{
@@ -69,10 +72,10 @@
     grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
     gap: 15px;
     justify-content: center;
-    align-items: center;
     grid-auto-flow: row;
     overflow: auto;
     padding-right: 16px;
+    background-color: #161D34;
 }
 
 .callContainer-body::-webkit-scrollbar {
@@ -97,8 +100,40 @@
     height: 300px;
     background-color: black;
     color: white;
-    font-size: 2em;
     border-radius: 15px;
+    position: relative;
+}
+
+.expand{
+    opacity: 0;
+    position: absolute;
+    top: 0;
+    right: 0;
+    transition: opacity 0.2s ease;
+    cursor: pointer;
+}
+
+.camera:hover .expand{
+    opacity: 1;
+}
+
+.expand:hover{
+    color: #C42695;
+}
+
+.mic{
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    background-color: white;
+    border-radius: 50%;
+    color: black;
+}
+
+.camera span{
+    font-size: 1em;
+    position: absolute;
+    bottom: 0;
 }
 
 
@@ -109,6 +144,65 @@
     font-size: 1.2em;
 }
 
-.userMensaje{
+.selfuserMensajeContainer, .userMensajeContainer{
+    height: auto;
+    width: auto;
+}
+
+.selfuserMensajeContainer{
     text-align: end;
+}
+
+.userMensajeContainer{
+    text-align: start;
+}
+
+.selfuserMensajeInfo, .userMensajeInfo{
+    font-size: 0.6em;
+    width: auto;
+}
+
+.selfuserMensaje, .userMensaje{
+    border-radius: 16px;
+    padding: 5px;
+    width: auto;
+}
+
+.selfuserMensaje{
+    background-color: #C42695;
+}
+
+.userMensaje{
+    background-color: #4285f4;
+}
+
+.selfuserMensaje span, .userMensaje span{
+    width: auto;
+}
+
+.chatProfileImg{
+    height: 30px;
+    width: 30px;
+    border-radius: 50%; 
+    overflow: hidden;
+    background-color: #4285f4;
+    position: relative;
+}
+.chatProfileImg img{
+    height: 100%;
+    width: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+}
+
+.userButton{
+    border-radius: 50%;
+    background-color: #FFF;
+    color: black;
+    padding: 7px;
+}
+
+.chatBtn{
+    display: none;
 }
